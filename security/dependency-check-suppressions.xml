@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suppressions xmlns="https://jeremylong.github.io/DependencyCheck/dependency-suppression.1.3.xsd">
+    <!--
+        Add suppressions only for confirmed false positives.
+        Recommended fields for each temporary suppression:
+        - owning team
+        - ticket number
+        - CVE or vulnerability ID
+        - evidence explaining why the finding is a false positive
+        - expiry date for re-review
+    -->
+</suppressions>
