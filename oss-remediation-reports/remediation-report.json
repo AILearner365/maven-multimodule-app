@@ -1,0 +1,102 @@
+{
+  "dependencies_upgraded": [
+    {
+      "dependency": "org.apache.logging.log4j:log4j-core",
+      "from_version": "2.14.1",
+      "to_version": "2.18.0",
+      "strategy": "direct_dependency_update",
+      "vulnerability_ids": [],
+      "source_code_modified": false
+    }
+  ],
+  "version_changes": [
+    {
+      "pom": "/home/kavya_parivarababu/maven-multimodule-app/pom.xml",
+      "group_id": "org.apache.logging.log4j",
+      "artifact_id": "log4j-core",
+      "dependency": "org.apache.logging.log4j:log4j-core",
+      "old_version": "2.14.1",
+      "new_version": "2.18.0",
+      "change_type": "direct_dependency_version_update"
+    },
+    {
+      "pom": "/home/kavya_parivarababu/maven-multimodule-app/task-web/pom.xml",
+      "group_id": "org.apache.logging.log4j",
+      "artifact_id": "log4j-core",
+      "dependency": "org.apache.logging.log4j:log4j-core",
+      "old_version": null,
+      "new_version": "2.18.0",
+      "change_type": "direct_dependency_version_added"
+    }
+  ],
+  "resolved_vulnerabilities": [
+    {
+      "affected_dependency": "org.apache.logging.log4j:log4j-core",
+      "package_ecosystem": "Maven",
+      "current_version": "2.14.1",
+      "severity": "CRITICAL",
+      "max_cvss_score": 10.0,
+      "vulnerability_ids": [
+        "CVE-2021-44228",
+        "CVE-2021-45046",
+        "CVE-2021-45105",
+        "GHSA-7rjr-3q55-vv33",
+        "GHSA-jfh8-c2jp-5v3q",
+        "GHSA-p6xc-xr62-6r2g"
+      ],
+      "summaries": [
+        "Incomplete fix for Apache Log4j vulnerability",
+        "Remote code injection in Log4j",
+        "Apache Log4j2 vulnerable to Improper Input Validation and Uncontrolled Recursion"
+      ],
+      "affected_files": [
+        "/home/kavya_parivarababu/maven-multimodule-app/task-web/pom.xml"
+      ],
+      "recommended_secure_versions": [
+        "2.3.1",
+        "2.12.2",
+        "2.12.3",
+        "2.15.0",
+        "2.16.0",
+        "2.17.0"
+      ],
+      "recommended_secure_version": "2.17.0"
+    }
+  ],
+  "build_validation_results": [
+    {
+      "dependency": "org.apache.logging.log4j:log4j-core",
+      "from_version": "2.14.1",
+      "candidate_version": "2.17.0",
+      "build_success": false,
+      "build_returncode": 1
+    },
+    {
+      "dependency": "org.apache.logging.log4j:log4j-core",
+      "from_version": "2.14.1",
+      "candidate_version": "2.17.1",
+      "build_success": false,
+      "build_returncode": 1
+    },
+    {
+      "dependency": "org.apache.logging.log4j:log4j-core",
+      "from_version": "2.14.1",
+      "candidate_version": "2.17.2",
+      "build_success": false,
+      "build_returncode": 1
+    },
+    {
+      "dependency": "org.apache.logging.log4j:log4j-core",
+      "from_version": "2.14.1",
+      "candidate_version": "2.18.0",
+      "build_success": true,
+      "build_returncode": 0
+    },
+    {
+      "stage": "final_validation",
+      "build_success": true,
+      "build_returncode": 0
+    }
+  ],
+  "outstanding_issues": []
+}
