@@ -1,0 +1,65 @@
+{
+  "dependencies_upgraded": [
+    {
+      "dependency": "org.apache.commons:commons-text",
+      "from_version": "1.9",
+      "to_version": "1.10.0",
+      "strategy": "direct_dependency_update",
+      "vulnerability_ids": [],
+      "source_code_modified": false
+    }
+  ],
+  "version_changes": [
+    {
+      "pom": "/home/kavya_parivarababu/maven-multimodule-app/pom.xml",
+      "group_id": "org.apache.commons",
+      "artifact_id": "commons-text",
+      "dependency": "org.apache.commons:commons-text",
+      "old_version": "1.9",
+      "new_version": "1.10.0",
+      "change_type": "direct_dependency_version_update"
+    }
+  ],
+  "resolved_vulnerabilities": [
+    {
+      "affected_dependency": "org.apache.commons:commons-text",
+      "package_ecosystem": "Maven",
+      "current_version": "1.9",
+      "severity": "CRITICAL",
+      "max_cvss_score": 9.8,
+      "vulnerability_ids": [
+        "CVE-2022-42889",
+        "GHSA-599f-7c49-w659"
+      ],
+      "summaries": [
+        "Arbitrary code execution in Apache Commons Text"
+      ],
+      "affected_files": [
+        "/home/kavya_parivarababu/maven-multimodule-app/pom.xml",
+        "/home/kavya_parivarababu/maven-multimodule-app/task-common/pom.xml",
+        "/home/kavya_parivarababu/maven-multimodule-app/task-domain/pom.xml",
+        "/home/kavya_parivarababu/maven-multimodule-app/task-service/pom.xml",
+        "/home/kavya_parivarababu/maven-multimodule-app/task-web/pom.xml"
+      ],
+      "recommended_secure_versions": [
+        "1.10.0"
+      ],
+      "recommended_secure_version": "1.10.0"
+    }
+  ],
+  "build_validation_results": [
+    {
+      "dependency": "org.apache.commons:commons-text",
+      "from_version": "1.9",
+      "candidate_version": "1.10.0",
+      "build_success": true,
+      "build_returncode": 0
+    },
+    {
+      "stage": "final_validation",
+      "build_success": true,
+      "build_returncode": 0
+    }
+  ],
+  "outstanding_issues": []
+}
