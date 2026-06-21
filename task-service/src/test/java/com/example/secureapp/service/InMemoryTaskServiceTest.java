@@ -4,12 +4,15 @@ import com.example.secureapp.domain.Task;
 import com.example.secureapp.domain.TaskStatus;
 import org.junit.jupiter.api.Test;
 
+import java.util.UUID;
+
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
-class InMemoryTaskServiceTest {
+public class InMemoryTaskServiceTest {
+
     @Test
-    void createStoresTaskWithTodoStatus() {
+    public void createStoresTaskWithTodoStatus() {
         InMemoryTaskService service = new InMemoryTaskService();
 
         Task createdTask = service.create("Upgrade dependency", "Patch vulnerable component.");
@@ -20,10 +23,10 @@ class InMemoryTaskServiceTest {
     }
 
     @Test
-    void updateStatusChangesTaskStatus() {
+    public void updateStatusChangesTaskStatus() {
         InMemoryTaskService service = new InMemoryTaskService();
-        Task createdTask = service.create("Generate SBOM", "Create CycloneDX output.");
 
+        Task createdTask = service.create("Generate SBOM", "Create CycloneDX output.");
         Task updatedTask = service.updateStatus(createdTask.id(), TaskStatus.DONE);
 
         assertThat(updatedTask.status()).isEqualTo(TaskStatus.DONE);
@@ -31,10 +34,10 @@ class InMemoryTaskServiceTest {
     }
 
     @Test
-    void updateMissingTaskThrowsException() {
+    public void updateMissingTaskThrowsException() {
         InMemoryTaskService service = new InMemoryTaskService();
 
-        assertThatThrownBy(() -> service.updateStatus(java.util.UUID.randomUUID(), TaskStatus.DONE))
+        assertThatThrownBy(() -> service.updateStatus(UUID.randomUUID(), TaskStatus.DONE))
                 .isInstanceOf(TaskNotFoundException.class);
     }
 }
