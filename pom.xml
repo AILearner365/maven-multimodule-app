@@ -1,14 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<?xml version='1.0' encoding='utf-8'?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>4.0.6</version>
-        <relativePath/>
+        <relativePath />
     </parent>
 
     <groupId>com.example.secureapp</groupId>
@@ -60,7 +58,7 @@
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-text</artifactId>
-            <version>1.9</version>
+            <version>1.10.0</version>
         </dependency>
     </dependencies>
     <build>
@@ -86,16 +84,16 @@
                                     <version>[3.6.3,)</version>
                                     <message>Spring Boot Maven builds require Maven 3.6.3 or newer.</message>
                                 </requireMavenVersion>
-                                <dependencyConvergence/>
-                                <banDuplicatePomDependencyVersions/>
+                                <dependencyConvergence />
+                                <banDuplicatePomDependencyVersions />
                                 <bannedDependencies>
                                     <searchTransitive>true</searchTransitive>
                                     <excludes>
-                                        <!-- Old libraries that frequently appear in OSS vulnerability findings. -->
+                                        
                                         <exclude>log4j:log4j</exclude>
                                         <exclude>commons-collections:commons-collections</exclude>
                                         <exclude>org.apache.struts:struts2-core</exclude>
-                                        <!-- Examples of version-range bans for well-known high-risk libraries. -->
+                                        
                                         <exclude>org.apache.logging.log4j:log4j-core:(,2.17.2]</exclude>
                                         <exclude>com.fasterxml.jackson.core:jackson-databind:(,2.15.0]</exclude>
                                     </excludes>
@@ -128,7 +126,7 @@
                                 </goals>
                                 <configuration>
                                     <rules>
-                                        <requireUpperBoundDeps/>
+                                        <requireUpperBoundDeps />
                                         <requireReleaseDeps>
                                             <onlyWhenRelease>true</onlyWhenRelease>
                                             <message>Release builds should not depend on snapshot artifacts.</message>
