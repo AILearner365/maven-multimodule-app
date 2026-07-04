@@ -18,8 +18,8 @@
     <dependencies>
         <dependency>
             <groupId>org.apache.commons</groupId>
-            <artifactId>commons-compress</artifactId>
-            <version>1.24.0</version>
+            <artifactId>commons-text</artifactId>
+            <version>1.9</version>
         </dependency>
     </dependencies>
 </project>
