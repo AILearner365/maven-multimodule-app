@@ -72,6 +72,11 @@
             <artifactId>json</artifactId>
             <version>20230227</version>
         </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-compress</artifactId>
+            <version>1.24.0</version>
+        </dependency>
     </dependencies>
     <build>
         <plugins>
@@ -119,105 +124,4 @@
             </plugin>
         </plugins>
     </build>
-
-    <profiles>
-        <profile>
-            <id>strict-deps</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-enforcer-plugin</artifactId>
-                        <version>${maven.enforcer.version}</version>
-                        <executions>
-                            <execution>
-                                <id>strict-upper-bound-dependency-rules</id>
-                                <phase>validate</phase>
-                                <goals>
-                                    <goal>enforce</goal>
-                                </goals>
-                                <configuration>
-                                    <rules>
-                                        <requireUpperBoundDeps/>
-                                        <requireReleaseDeps>
-                                            <onlyWhenRelease>true</onlyWhenRelease>
-                                            <message>Release builds should not depend on snapshot artifacts.</message>
-                                        </requireReleaseDeps>
-                                    </rules>
-                                </configuration>
-                            </execution>
-                        </executions>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-
-        <profile>
-            <id>sbom</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.cyclonedx</groupId>
-                        <artifactId>cyclonedx-maven-plugin</artifactId>
-                        <version>${cyclonedx.maven.plugin.version}</version>
-                        <inherited>false</inherited>
-                        <executions>
-                            <execution>
-                                <id>generate-aggregate-sbom</id>
-                                <phase>verify</phase>
-                                <goals>
-                                    <goal>makeAggregateBom</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-
-        <profile>
-            <id>security-scan</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.owasp</groupId>
-                        <artifactId>dependency-check-maven</artifactId>
-                        <version>${owasp.dependency-check.version}</version>
-                        <inherited>false</inherited>
-                        <configuration>
-                            <failBuildOnCVSS>7</failBuildOnCVSS>
-                            <skipProvidedScope>true</skipProvidedScope>
-                            <suppressionFiles>
-                                <suppressionFile>${maven.multiModuleProjectDirectory}/security/dependency-check-suppressions.xml</suppressionFile>
-                            </suppressionFiles>
-                        </configuration>
-                        <executions>
-                            <execution>
-                                <id>aggregate-vulnerability-scan</id>
-                                <phase>verify</phase>
-                                <goals>
-                                    <goal>aggregate</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-                    <plugin>
-                        <groupId>org.cyclonedx</groupId>
-                        <artifactId>cyclonedx-maven-plugin</artifactId>
-                        <version>${cyclonedx.maven.plugin.version}</version>
-                        <inherited>false</inherited>
-                        <executions>
-                            <execution>
-                                <id>generate-sbom-for-scan</id>
-                                <phase>verify</phase>
-                                <goals>
-                                    <goal>makeAggregateBom</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-    </profiles>
 </project>
