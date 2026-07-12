@@ -109,6 +109,7 @@
                                         <!-- Old libraries that frequently appear in OSS vulnerability findings. -->
                                         <exclude>log4j:log4j</exclude>
                                         <exclude>commons-collections:commons-collections</exclude>
+                                        <exclude>org.apache.struts:struts2-core</exclude>
                                         <!-- Examples of version-range bans for well-known high-risk libraries. -->
                                         <exclude>org.apache.logging.log4j:log4j-core:(,2.17.2]</exclude>
                                         <exclude>com.fasterxml.jackson.core:jackson-databind:(,2.15.0]</exclude>
